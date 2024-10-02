@@ -1,0 +1,949 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --verdePrimario: #1abc9c;
+  --amarillo: #f1c40f;
+
+  --gris: rgba(0, 0, 0, 0.5);
+  --fondo: #f7fafb;
+  --blanco: #fff;
+}
+
+body {
+  background-color: var(--fondo);
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+  margin: 20px 0;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--verdePrimario);
+  border-radius: 20px;
+}
+
+.recentActivities::-webkit-scrollbar {
+  width: 10px;
+}
+
+.recentActivities::-webkit-scrollbar-track {
+  background-color: transparent;
+  margin: 20px 0px;
+}
+
+.recentActivities::-webkit-scrollbar-thumb {
+  background-color: var(--verdePrimario);
+  border-radius: 20px;
+}
+
+.wrapper {
+  display: flex;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.wrapper .sidebar {
+  width: 200px;
+  height: 100%;
+  background: var(--verdePrimario);
+  padding: 30px 0px;
+  position: fixed;
+}
+
+.wrapper .sidebar h2 {
+  color: var(--blanco);
+  font-size: 100px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.wrapper .sidebar ul li {
+  padding: 15px;
+  width: 170.75px;
+  margin: 5px auto;
+}
+
+.wrapper .sidebar ul li a {
+  color: var(--blanco);
+  display: block;
+}
+
+.wrapper .sidebar ul li a .fas {
+  width: 25px;
+}
+
+.wrapper .sidebar ul li:hover {
+  background-color: #3cc8ad;
+  box-shadow: 0px 0px 23.9369px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.wrapper .sidebar ul li:hover a {
+  color: #fff;
+}
+
+.main {
+  position: relative;
+  width: calc(100% - 200px);
+  height: 100%;
+  left: 200px;
+  min-height: 100vh;
+  background-color: var(--fondo);
+  transition: 0.5s;
+}
+
+.main .topbar {
+  width: 100%;
+  background-color: var(--blanco);
+  height: 70px;
+  padding: 0 10px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search {
+  position: relative;
+  width: 400px;
+  margin: 0 10px;
+  margin-left: 50px;
+}
+
+.search label {
+  position: relative;
+  width: 100%;
+}
+
+.search label input {
+  width: 100%;
+  height: 39px;
+  padding-left: 40px;
+  outline: none;
+  border: 0;
+  border: solid 2px var(--verdePrimario);
+  border-radius: 15px;
+}
+
+.search label .fas {
+  position: absolute;
+  color: var(--verdePrimario);
+  left: 15px;
+  top: 3px;
+}
+
+.user {
+  position: relative;
+  width: calc(100% - 600px);
+  display: flex;
+  align-items: center;
+  position: relative;
+  float: right;
+}
+
+.user .userInfo {
+  margin-left: 15px;
+  justify-content: space-between;
+}
+
+.user .userInfo .nombre {
+  font-weight: bold;
+}
+
+.user .userInfo .id {
+  color: var(--gris);
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.user .userPuntos {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 30px;
+  color: var(--amarillo);
+}
+
+.user .userReciclado {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 30px;
+  color: var(--verdePrimario);
+}
+
+.user .userReciclado .fas,
+.user .userPuntos .fas {
+  margin-right: 10px;
+}
+
+.cerrarSesion a {
+  color: tomato;
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.userAvatar {
+  position: relative;
+  min-width: 50px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.user img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mainInicio {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: absolute;
+  justify-content: center;
+  width: 100%;
+  height: calc(100% - 70px);
+}
+
+.balance {
+  width: 65%;
+}
+
+.recentActivities {
+  width: 30%;
+  height: calc(100% - 70px);
+  overflow-y: scroll;
+  margin: 15px;
+  background-color: var(--blanco);
+  box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+}
+
+.recentActivities table {
+  width: 100%;
+  background-color: var(--blanco);
+  border-collapse: collapse;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.recentActivities td {
+  text-align: left;
+  font-size: 15px;
+  height: 80px;
+  padding: 5px;
+}
+
+.recentActivities td span {
+  color: var(--gris);
+  font-size: 12px;
+}
+
+.recentActivities tr:hover {
+  cursor: pointer;
+}
+
+.cardHeader {
+  margin: 20px;
+}
+
+.cardBox {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+}
+
+.cardBox .card {
+  width: calc(100% - 20%);
+  height: 70.08px;
+  position: relative;
+  background-color: var(--blanco);
+  box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.05);
+  border-radius: 17px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cardBox .card .cardName {
+  position: relative;
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--gris);
+}
+
+.cardBox .card .number {
+  font-weight: bold;
+  font-size: 21px;
+}
+
+.cardBox .card .totalReciclaje {
+  color: var(--verdePrimario);
+}
+
+.cardBox .card .totalPuntos {
+  color: var(--amarillo);
+}
+
+.cardBox .card .iconBox {
+  font-size: 35px;
+  text-align: center;
+  line-height: 50px;
+  color: var(--blanco);
+  width: 50px;
+  height: 50px;
+  border-radius: 17px;
+}
+
+.cardBox .card .reciclaje {
+  background-color: var(--verdePrimario);
+}
+
+.cardBox .card .puntos {
+  background-color: var(--amarillo);
+}
+
+.details {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+}
+
+.details .card {
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  background-color: var(--blanco);
+  box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.05);
+  border-radius: 17px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.details .card .cardDetail {
+  margin-top: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.details .card .cardName {
+  position: relative;
+  height: 40px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--gris);
+}
+
+.details .card .iconBox {
+  font-size: 35px;
+  text-align: center;
+  line-height: 50px;
+  color: var(--blanco);
+  width: 50px;
+  height: 50px;
+  border-radius: 17px;
+}
+
+.details .card .aprovechables {
+  background-color: var(--verdePrimario);
+}
+
+.details .card .noAprovechables {
+  background-color: tomato;
+}
+
+.details .card .organicos {
+  background-color: var(--amarillo);
+}
+
+.details .card .number {
+  background-color: var(--blanco);
+  font-weight: bold;
+  font-size: 25px;
+}
+
+#porcentajeA {
+  color: var(--verdePrimario);
+}
+#porcentajeO {
+  color: var(--amarillo);
+}
+#porcentajeNa {
+  color: tomato;
+}
+
+/* Dashboard reciclaje*/
+
+.mainReciclaje {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  justify-content: center;
+  width: 100%;
+  height: calc(100% - 70px);
+}
+
+.cardBoxReciclaje {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cardBoxReciclaje .cardReciclaje {
+  width: calc(100% - 30%);
+  height: 400px;
+  position: relative;
+  background-color: var(--blanco);
+  box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.05);
+  border-radius: 17px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.cardBoxReciclaje .cardReciclaje img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.cardBoxReciclaje .cardReciclaje p {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#organico:hover {
+  color: var(--amarillo);
+  border: solid var(--amarillo) 2px;
+}
+
+#aprovechable:hover {
+  color: var(--verdePrimario);
+  border: solid var(--verdePrimario) 2px;
+}
+
+#noAprovechable:hover {
+  color: tomato;
+  border: solid tomato 2px;
+}
+
+.btn-reciclar {
+  color: var(--blanco);
+  background-color: var(--verdePrimario);
+  font-weight: bold;
+  font-size: 15px;
+  display: block;
+  width: 50%;
+  height: 39px;
+  border: none;
+  border-radius: 10px;
+  margin: 20px auto;
+  cursor: pointer;
+}
+
+/* Dashboard reciclaje*/
+
+.mainPuntuacion {
+  width: 100%;
+  height: calc(100% - 70px);
+  padding: 20px;
+}
+
+.mainPuntuacion table {
+  background-color: var(--blanco);
+  border-collapse: collapse;
+  width: 100%;
+  border-spacing: 0;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.05);
+}
+
+.mainPuntuacion th {
+  font-size: 20px;
+  height: 50px;
+  border-bottom: solid 2px var(--gris);
+}
+
+.mainPuntuacion td {
+  font-size: 15px;
+  height: 50px;
+}
+
+.mainPuntuacion tr:nth-child(even) {
+  background-color: var(--fondo);
+}
+
+.mainPuntuacion tr:hover {
+  background-color: var(--verdePrimario);
+  color: var(--blanco);
+  cursor: pointer;
+}
+
+/* Dashboard residuo */
+
+.mainResiduo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: absolute;
+  justify-content: center;
+  width: 100%;
+  height: calc(100% - 70px);
+}
+
+.mainResiduo .residuo {
+  width: 65%;
+  padding: 5px;
+}
+
+.mainResiduo .detalleResiduo {
+  width: 30%;
+  margin: 15px;
+  background-color: var(--blanco);
+  box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.detalleResiduo .contentResiduo {
+  width: 100%;
+}
+
+.detalleResiduo .contentResiduo .residuoNombre {
+  text-align: center;
+}
+
+.detalleResiduo .contentResiduo img {
+  text-align: center;
+  width: 103px;
+  display: block;
+  margin: 20px auto;
+}
+
+.detalleResiduo .contentResiduo .clasificacion {
+  width: 100%;
+  margin: 15px 0;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.clasificacion .img img {
+  width: 45px;
+  margin: 5px;
+}
+
+.clasificacion .descripcionClasificacion h3 {
+  font-size: 15px;
+}
+
+.clasificacion .descripcionClasificacion p {
+  font-size: 12px;
+  margin-top: 5px;
+  color: var(--gris);
+}
+
+.clasificacion .descripcionClasificacion {
+  margin-left: 5px;
+}
+
+.detalleResiduo .contentResiduo .descripcion {
+  width: 100%;
+  margin: 15px 0;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.descripcion .img img {
+  width: 45px;
+  margin: 5px;
+}
+
+.descripcion .descripcionTrans h3 {
+  font-size: 15px;
+}
+
+.descripcion .descripcionTrans p {
+  font-size: 12px;
+  margin-top: 5px;
+  color: var(--gris);
+}
+
+.descripcion .descripcionTrans {
+  margin-left: 5px;
+}
+
+.residuo {
+  position: relative;
+  width: 100%;
+  height: auto;
+  justify-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.residuo .cardBoxResiduo {
+  width: 180px;
+  height: 100%;
+  background-color: var(--blanco);
+  box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.05);
+  border-radius: 17px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  cursor: pointer;
+}
+
+.residuo .cardBoxResiduo:hover {
+  border: solid 2px var(--verdePrimario);
+}
+
+.residuo .cardBoxResiduo .etiqueta {
+  width: 60px;
+  height: 15.16px;
+  font-size: 12px;
+  color: var(--blanco);
+  text-align: center;
+  margin-bottom: 10px;
+
+  background-color: #1abc9c;
+  border-radius: 16px;
+}
+
+.residuo .cardBoxResiduo .etiquetaVacia {
+  width: 60px;
+  height: 15.16px;
+
+  background-color: transparent;
+  border-radius: 16px;
+}
+
+#cardNameResiduo h4{
+  color: black;
+}
+
+.residuo .cardBoxResiduo img {
+  width: 60%;
+  margin: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.residuo .cardBoxResiduo .descripcionResiduo {
+  color: var(--gris);
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.residuo .cardBoxResiduo .cardDetailResiduo {
+  margin: 0 10px;
+}
+
+.cardDetailResiduo .fas {
+  color: var(--verdePrimario);
+}
+
+.mainPremios {
+  width: 100%;
+  padding: 20px;
+  height: calc(100% - 70px);
+}
+
+.premios {
+  width: 100%;
+  height: auto;
+  justify-items: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.premios .cardBoxPremio {
+  width: 180px;
+  height: 100%;
+  background-color: var(--blanco);
+  box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.05);
+  border-radius: 17px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.premios .cardBoxPremio:hover {
+  border: solid 2px var(--verdePrimario);
+}
+
+.premios .cardBoxPremio .precioPremio {
+  width: 100%;
+  height: 15.16px;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.premios .cardBoxPremio .precioPremio p {
+  font-size: 15px;
+}
+
+.premios .cardBoxPremio img {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: block;
+  margin-bottom: 20px;
+}
+
+.premios .cardBoxPremio .infoPremio {
+  width: 100%;
+}
+
+.premios .cardBoxPremio .infoPremio h3 {
+  font-size: 15px;
+}
+
+.premios .cardBoxPremio .infoPremio p {
+  color: var(--gris);
+  font-size: 12px;
+}
+
+.premios .cardBoxPremio .precioCanjePremio {
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 15px;
+  font-size: 15px;
+  color: var(--amarillo);
+}
+
+.premios .cardBoxPremio .precioCanjeSticker {
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 15px;
+  font-size: 15px;
+  color: var(--verdePrimario);
+}
+
+.mainReciclaje .modal_container {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.mainReciclaje .modal_container1 {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.mainReciclaje .modal_container1 .modalObtenido {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: var(--fondo);
+  width: 411px;
+  height: 544px;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.05);
+}
+
+.mainReciclaje .modal_container1 .modalObtenido .modalDetalle {
+  width: 300px;
+  height: 308px;
+  padding: 40px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: var(--blanco);
+  box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.mainReciclaje .show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.mainReciclaje .showDialog {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.mainReciclaje .modal_container .modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: var(--fondo);
+  width: 411px;
+  height: 544px;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.05);
+}
+
+.mainReciclaje .modal_container .modal .modalDetalle {
+  width: 300px;
+  height: 308px;
+  padding: 20px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: var(--blanco);
+  box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.modal_container1 .modalObtenido .modalDetalle .obtenidoDetalle h3 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.modalObtenido .modalDetalle .obtenidoDetalle .reciclaje {
+  color: var(--verdePrimario);
+}
+
+.modalObtenido .modalDetalle .obtenidoDetalle .puntos {
+  color: var(--amarillo);
+}
+
+.mainReciclaje .modal_container .modal p {
+  margin-top: 10px;
+  color: var(--gris);
+  font-size: 16px;
+}
+
+.mainReciclaje .modal_container1 .modalObtenido p {
+  margin-top: 10px;
+  color: var(--gris);
+  font-size: 16px;
+}
+
+.mainReciclaje .modal_container .modal img {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: block;
+}
+
+.mainReciclaje .modal_container .modal h3 {
+  text-align: left;
+  color: var(--gris);
+  margin-bottom: 15px;
+}
+
+.mainReciclaje .modal_container1 .modalObtenido .reciclar {
+  background-color: #47a386;
+  cursor: pointer;
+  border: 0;
+  border-radius: 15px;
+  width: 234px;
+  height: 46px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 25px;
+}
+
+.mainReciclaje .modal_container .modal button {
+  background-color: #47a386;
+  cursor: pointer;
+  border: 0;
+  border-radius: 15px;
+  width: 234px;
+  height: 46px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 25px;
+}
