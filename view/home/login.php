@@ -1,6 +1,6 @@
 <div class="loginleft">
     <h1 id="titulo"><i class="fas fa-recycle"></i> Bio-Clean Earth</h1>
-    <p>Bienvenido con nuestro sistemas podras realizar tus reciclajes de la manera correcta, ademas ayudaras a mejorar el medio ambiente</p>
+    <p>Bienvenido. Nuestro sistema te ayuda a gestionar tus reciclajes de manera eficiente y responsable, reduciendo el impacto ecológico y creando un futuro más limpio y sostenible.</p>
     <img src="assets/img/imglogin.png" alt="" width="357.24px" height="217.71px">
 </div>
 <div class="loginright">
