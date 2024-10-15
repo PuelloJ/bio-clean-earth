@@ -1,36 +1,30 @@
 <div class="mainReciclaje">
     <div class="cardBoxReciclaje">
         <div class="cardReciclaje" id="organico">
-            <div>
-                <div class="cardImg">
-                    <img src="assets/img/cestas/blanca.png" alt="">
-                </div>
-                <div class="number totalPuntos">
-                    <p><?php echo number_format(NOAPROVECHABLE); ?></p>
-                    <p>Gramos</p>
-                </div>
+            <div class="cardImg">
+                <img src="assets/img/cestas/blanca.png" alt="">
+            </div>
+            <div class="number totalPuntos">
+                <p><?php echo number_format(NOAPROVECHABLE); ?></p>
+                <p>Gramos</p>
             </div>
         </div>
         <div class="cardReciclaje" id="aprovechable">
-            <div>
-                <div class="cardImg">
-                    <img src="assets/img/cestas/verde.png" alt="">
-                </div>
-                <div class="number totalPuntos">
-                    <p><?php echo number_format(APROVECHABLE); ?></p>
-                    <p>Gramos</p>
-                </div>
+            <div class="cardImg">
+                <img src="assets/img/cestas/verde.png" alt="">
+            </div>
+            <div class="number totalPuntos">
+                <p><?php echo number_format(APROVECHABLE); ?></p>
+                <p>Gramos</p>
             </div>
         </div>
         <div class="cardReciclaje" id="noAprovechable">
-            <div>
-                <div class="cardImg">
-                    <img src="assets/img/cestas/negra.png" alt="">
-                </div>
-                <div class="number totalPuntos">
-                    <p><?php echo number_format(ORGANICO); ?></p>
-                    <p>Gramos</p>
-                </div>
+            <div class="cardImg">
+                <img src="assets/img/cestas/negra.png" alt="">
+            </div>
+            <div class="number totalPuntos">
+                <p><?php echo number_format(ORGANICO); ?></p>
+                <p>Gramos</p>
             </div>
         </div>
     </div>

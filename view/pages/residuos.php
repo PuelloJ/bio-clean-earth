@@ -37,7 +37,7 @@
     <div class="detalleResiduo">
         <div class="contentResiduo">
             <div class="residuoNombre">
-                <h3><?php echo $residuo->getNombre(); ?></h3>
+                <h2><?php echo $residuo->getNombre(); ?></h2>
             </div>
             <div class="imgResiduodetalle">
                 <img src="<?= $residuo->getDireccionIMG() ?>" alt="">
