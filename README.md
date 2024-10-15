@@ -1,8 +1,8 @@
-# ♻️ Bio-Clear Earth
+# ♻️ Bio-Clean Earth
 
-**Bio-Clear Earth** es una aplicación diseñada para motivar y facilitar el reciclaje a través de una plataforma interactiva que educa, recompensa y guía a los usuarios en el proceso de separación de residuos. Esta plataforma tiene como objetivo resolver el problema de la falta de conocimiento y motivación para reciclar, ofreciendo una solución práctica que incentiva la participación mediante puntos y recompensas.
+**Bio-Clean Earth** es una aplicación diseñada para motivar y facilitar el reciclaje a través de una plataforma interactiva que educa, recompensa y guía a los usuarios en el proceso de separación de residuos. Esta plataforma tiene como objetivo resolver el problema de la falta de conocimiento y motivación para reciclar, ofreciendo una solución práctica que incentiva la participación mediante puntos y recompensas.
 
-![Banner Bio-Clear Earth](assets/img/Banners/banner1.png)
+![Banner Bio-Clean Earth](assets/img/Banners/banner1.png)
 
 ## 📋 Tabla de Contenidos
 1. [Introducción](#introducción)
@@ -16,7 +16,7 @@
 
 ## 🌍 Introducción
 
-El reciclaje es un proceso clave para la preservación del medio ambiente, pero muchas personas aún no reciclan debido a la falta de conocimiento y motivación. **Bio-Clear Earth** busca cambiar eso, proporcionando una plataforma accesible y divertida que incentiva a los usuarios a participar activamente en el reciclaje.
+El reciclaje es un proceso clave para la preservación del medio ambiente, pero muchas personas aún no reciclan debido a la falta de conocimiento y motivación. **Bio-Clean Earth** busca cambiar eso, proporcionando una plataforma accesible y divertida que incentiva a los usuarios a participar activamente en el reciclaje.
 
 ## 🚀 Características Principales
 
@@ -53,11 +53,11 @@ El reciclaje es un proceso clave para la preservación del medio ambiente, pero 
 2. **Clona el repositorio** en el directorio de tu servidor local:
     - Para XAMPP: Copia el proyecto en la carpeta `htdocs`:
       ```bash
-      git clone https://github.com/PuelloJ/bio-clean-earth.git C:/xampp/htdocs/bio-clear-earth
+      git clone https://github.com/PuelloJ/bio-clean-earth.git C:/xampp/htdocs/bio-clean-earth
       ```
     - Para WAMP: Copia el proyecto en la carpeta `www`:
       ```bash
-      git clone https://github.com/PuelloJ/bio-clean-earth.git C:/wamp64/www/bio-clear-earth
+      git clone https://github.com/PuelloJ/bio-clean-earth.git C:/wamp64/www/bio-clean-earth
       ```
 
 3. **Configura la base de datos**:
