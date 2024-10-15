@@ -10,6 +10,7 @@
 :root {
   --verdePrimario: #1abc9c;
   --amarillo: #f1c40f;
+  --rojo: #ff6347;
 
   --gris: rgba(0, 0, 0, 0.5);
   --fondo: #f7fafb;
@@ -108,8 +109,8 @@ body::-webkit-scrollbar-thumb {
 .main .topbar {
   width: 100%;
   background-color: var(--blanco);
-  height: 70px;
-  padding: 0 10px;
+  box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.05);
+  padding: 10px;
   position: sticky;
   top: 0;
   display: flex;
@@ -270,24 +271,20 @@ body::-webkit-scrollbar-thumb {
   position: relative;
   width: 100%;
   padding: 10px;
-  justify-items: center;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 20px;
+  display: flex;
+  gap: 30px;
 }
 
 .cardBox .card {
   width: calc(100% - 20%);
-  height: 70.08px;
   position: relative;
   background-color: var(--blanco);
   box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.05);
   border-radius: 17px;
-  padding: 20px;
+  padding: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
 }
 
 .cardBox .card .cardName {
@@ -329,39 +326,25 @@ body::-webkit-scrollbar-thumb {
 }
 
 .details {
-  position: relative;
-  width: 100%;
-  height: auto;
   padding: 10px;
-  justify-items: center;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
 }
 
 .details .card {
-  flex-direction: row;
-  flex-wrap: wrap;
-  position: relative;
   background-color: var(--blanco);
   box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.05);
   border-radius: 17px;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.details .card .cardDetail {
-  margin-top: 10px;
   width: 100%;
-  height: 100%;
+  padding: 30px;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
 }
 
 .details .card .cardName {
-  position: relative;
-  height: 40px;
-  margin-bottom: 10px;
+  margin: 15px 0;
   font-size: 15px;
   font-weight: bold;
   color: var(--gris);
@@ -370,7 +353,9 @@ body::-webkit-scrollbar-thumb {
 .details .card .iconBox {
   font-size: 35px;
   text-align: center;
-  line-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: var(--blanco);
   width: 50px;
   height: 50px;
@@ -382,7 +367,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .details .card .noAprovechables {
-  background-color: tomato;
+  background-color: #ff6347;
 }
 
 .details .card .organicos {
@@ -410,56 +395,48 @@ body::-webkit-scrollbar-thumb {
 .mainReciclaje {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
   width: 100%;
   height: calc(100% - 70px);
 }
 
 .cardBoxReciclaje {
-  position: relative;
-  width: 100%;
-  padding: 10px;
-  justify-items: center;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  gap: 40px;
 }
 
 .cardBoxReciclaje .cardReciclaje {
-  width: calc(100% - 30%);
-  height: 400px;
-  position: relative;
   background-color: var(--blanco);
   box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.05);
   border-radius: 17px;
   padding: 20px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 30px;
   text-align: center;
-  cursor: pointer;
 }
 
 .cardBoxReciclaje .cardReciclaje img {
-  width: 100%;
-  margin-bottom: 20px;
+  width: 70%;
 }
 
 .cardBoxReciclaje .cardReciclaje p {
-  font-size: 15px;
+  font-size: 25px;
   font-weight: bold;
 }
 
-#organico:hover {
+#organico {
   color: var(--amarillo);
   border: solid var(--amarillo) 2px;
 }
 
-#aprovechable:hover {
+#aprovechable {
   color: var(--verdePrimario);
   border: solid var(--verdePrimario) 2px;
 }
 
-#noAprovechable:hover {
+#noAprovechable {
   color: tomato;
   border: solid tomato 2px;
 }
@@ -523,10 +500,11 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  position: absolute;
   justify-content: center;
   width: 100%;
   height: calc(100% - 70px);
+  padding: 20px;
+  gap: 20px;
 }
 
 .mainResiduo .residuo {
@@ -534,41 +512,32 @@ body::-webkit-scrollbar-thumb {
   padding: 5px;
 }
 
-.mainResiduo .detalleResiduo {
+.detalleResiduo {
   width: 30%;
-  margin: 15px;
   background-color: var(--blanco);
   box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.05);
   border-radius: 15px;
-  padding: 20px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  position: relative;
+  padding: 30px;
 }
 
-.detalleResiduo .contentResiduo {
-  width: 100%;
-}
-
-.detalleResiduo .contentResiduo .residuoNombre {
+.residuoNombre {
   text-align: center;
+  color: var(--verdePrimario);
 }
 
-.detalleResiduo .contentResiduo img {
+.contentResiduo img {
   text-align: center;
-  width: 103px;
+  width: 180px;
   display: block;
   margin: 20px auto;
 }
 
-.detalleResiduo .contentResiduo .clasificacion {
+.clasificacion {
   width: 100%;
-  margin: 15px 0;
+  margin: 30px 0 ;
   position: relative;
   display: flex;
   justify-content: space-between;
-  cursor: pointer;
 }
 
 .clasificacion .img img {
@@ -576,21 +545,16 @@ body::-webkit-scrollbar-thumb {
   margin: 5px;
 }
 
-.clasificacion .descripcionClasificacion h3 {
-  font-size: 15px;
-}
-
-.clasificacion .descripcionClasificacion p {
-  font-size: 12px;
-  margin-top: 5px;
+.descripcionClasificacion p {
+  margin-top: 10px;
   color: var(--gris);
 }
 
-.clasificacion .descripcionClasificacion {
+.descripcionClasificacion {
   margin-left: 5px;
 }
 
-.detalleResiduo .contentResiduo .descripcion {
+.descripcion {
   width: 100%;
   margin: 15px 0;
   position: relative;
@@ -604,53 +568,39 @@ body::-webkit-scrollbar-thumb {
   margin: 5px;
 }
 
-.descripcion .descripcionTrans h3 {
-  font-size: 15px;
-}
 
-.descripcion .descripcionTrans p {
-  font-size: 12px;
-  margin-top: 5px;
+.descripcionTrans p {
   color: var(--gris);
 }
 
-.descripcion .descripcionTrans {
+.descripcionTrans {
   margin-left: 5px;
 }
 
 .residuo {
-  position: relative;
-  width: 100%;
-  height: auto;
-  justify-items: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
   align-items: center;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 10px;
-  row-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
-.residuo .cardBoxResiduo {
-  width: 180px;
+.cardBoxResiduo {
   height: 100%;
   background-color: var(--blanco);
   box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.05);
   border-radius: 17px;
-  padding: 10px;
+  padding: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  position: relative;
   cursor: pointer;
 }
 
-.residuo .cardBoxResiduo:hover {
-  border: solid 2px var(--verdePrimario);
+.cardBoxResiduo:hover {
+  border: solid 1px var(--verdePrimario);
 }
 
-.residuo .cardBoxResiduo .etiqueta {
+.etiqueta {
   width: 60px;
   height: 15.16px;
   font-size: 12px;
@@ -662,7 +612,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 16px;
 }
 
-.residuo .cardBoxResiduo .etiquetaVacia {
+.etiquetaVacia {
   width: 60px;
   height: 15.16px;
 
@@ -670,24 +620,24 @@ body::-webkit-scrollbar-thumb {
   border-radius: 16px;
 }
 
-#cardNameResiduo h4{
+#cardNameResiduo h4 {
   color: black;
 }
 
-.residuo .cardBoxResiduo img {
+.cardBoxResiduo img {
   width: 60%;
   margin: auto;
   display: block;
   margin-bottom: 10px;
 }
 
-.residuo .cardBoxResiduo .descripcionResiduo {
+.descripcionResiduo {
   color: var(--gris);
   font-size: 12px;
   margin-top: 5px;
 }
 
-.residuo .cardBoxResiduo .cardDetailResiduo {
+.cardDetailResiduo {
   margin: 0 10px;
 }
 
@@ -698,23 +648,18 @@ body::-webkit-scrollbar-thumb {
 .mainPremios {
   width: 100%;
   padding: 20px;
-  height: calc(100% - 70px);
 }
 
 .premios {
-  width: 100%;
-  height: auto;
-  justify-items: center;
   align-items: center;
+  
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  column-gap: 10px;
-  row-gap: 10px;
+  gap: 20px;
 }
 
-.premios .cardBoxPremio {
-  width: 180px;
-  height: 100%;
+
+.cardBoxPremio {
   background-color: var(--blanco);
   box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.05);
   border-radius: 17px;
@@ -722,16 +667,15 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   cursor: pointer;
 }
 
-.premios .cardBoxPremio:hover {
-  border: solid 2px var(--verdePrimario);
+.cardBoxPremio:hover {
+  border: solid 1px var(--verdePrimario);
 }
 
-.premios .cardBoxPremio .precioPremio {
+.cardBoxPremio .precioPremio {
   width: 100%;
   height: 15.16px;
   font-size: 20px;
@@ -741,11 +685,11 @@ body::-webkit-scrollbar-thumb {
   margin-bottom: 20px;
 }
 
-.premios .cardBoxPremio .precioPremio p {
+.precioPremio p {
   font-size: 15px;
 }
 
-.premios .cardBoxPremio img {
+.cardBoxPremio img {
   width: 60%;
   margin-left: auto;
   margin-right: auto;
@@ -754,20 +698,20 @@ body::-webkit-scrollbar-thumb {
   margin-bottom: 20px;
 }
 
-.premios .cardBoxPremio .infoPremio {
+.infoPremio {
   width: 100%;
 }
 
-.premios .cardBoxPremio .infoPremio h3 {
+.infoPremio h3 {
   font-size: 15px;
 }
 
-.premios .cardBoxPremio .infoPremio p {
+.infoPremio p {
   color: var(--gris);
   font-size: 12px;
 }
 
-.premios .cardBoxPremio .precioCanjePremio {
+.precioCanjePremio {
   margin-top: 10px;
   width: 100%;
   border-radius: 15px;
@@ -775,7 +719,7 @@ body::-webkit-scrollbar-thumb {
   color: var(--amarillo);
 }
 
-.premios .cardBoxPremio .precioCanjeSticker {
+.precioCanjeSticker {
   margin-top: 10px;
   width: 100%;
   border-radius: 15px;
@@ -783,7 +727,7 @@ body::-webkit-scrollbar-thumb {
   color: var(--verdePrimario);
 }
 
-.mainReciclaje .modal_container {
+.modal_container {
   background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
   display: flex;
@@ -798,7 +742,7 @@ body::-webkit-scrollbar-thumb {
   opacity: 0;
 }
 
-.mainReciclaje .modal_container1 {
+.modal_container1 {
   background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
   display: flex;
@@ -813,7 +757,7 @@ body::-webkit-scrollbar-thumb {
   opacity: 0;
 }
 
-.mainReciclaje .modal_container1 .modalObtenido {
+.modalObtenido {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -827,7 +771,7 @@ body::-webkit-scrollbar-thumb {
   box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.05);
 }
 
-.mainReciclaje .modal_container1 .modalObtenido .modalDetalle {
+.modalDetalle {
   width: 300px;
   height: 308px;
   padding: 40px;
@@ -843,17 +787,17 @@ body::-webkit-scrollbar-thumb {
   flex-wrap: wrap;
 }
 
-.mainReciclaje .show {
+.show {
   pointer-events: auto;
   opacity: 1;
 }
 
-.mainReciclaje .showDialog {
+.showDialog {
   pointer-events: auto;
   opacity: 1;
 }
 
-.mainReciclaje .modal_container .modal {
+.modal {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -867,7 +811,7 @@ body::-webkit-scrollbar-thumb {
   box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.05);
 }
 
-.mainReciclaje .modal_container .modal .modalDetalle {
+.modalDetalle {
   width: 300px;
   height: 308px;
   padding: 20px;
@@ -884,33 +828,33 @@ body::-webkit-scrollbar-thumb {
   flex-wrap: wrap;
 }
 
-.modal_container1 .modalObtenido .modalDetalle .obtenidoDetalle h3 {
+.obtenidoDetalle h3 {
   font-size: 30px;
   font-weight: bold;
   text-align: center;
 }
 
-.modalObtenido .modalDetalle .obtenidoDetalle .reciclaje {
+.reciclaje {
   color: var(--verdePrimario);
 }
 
-.modalObtenido .modalDetalle .obtenidoDetalle .puntos {
+.puntos {
   color: var(--amarillo);
 }
 
-.mainReciclaje .modal_container .modal p {
+.modal p {
   margin-top: 10px;
   color: var(--gris);
   font-size: 16px;
 }
 
-.mainReciclaje .modal_container1 .modalObtenido p {
+.modalObtenido p {
   margin-top: 10px;
   color: var(--gris);
   font-size: 16px;
 }
 
-.mainReciclaje .modal_container .modal img {
+.modal img {
   width: 70%;
   margin-left: auto;
   margin-right: auto;
@@ -918,13 +862,13 @@ body::-webkit-scrollbar-thumb {
   display: block;
 }
 
-.mainReciclaje .modal_container .modal h3 {
+.modal h3 {
   text-align: left;
   color: var(--gris);
   margin-bottom: 15px;
 }
 
-.mainReciclaje .modal_container1 .modalObtenido .reciclar {
+.reciclar {
   background-color: #47a386;
   cursor: pointer;
   border: 0;
@@ -936,7 +880,7 @@ body::-webkit-scrollbar-thumb {
   font-size: 25px;
 }
 
-.mainReciclaje .modal_container .modal button {
+.modal button {
   background-color: #47a386;
   cursor: pointer;
   border: 0;
