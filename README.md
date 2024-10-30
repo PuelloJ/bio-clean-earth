@@ -10,9 +10,8 @@
 4. [Instalación](#instalación)
 5. [Uso](#uso)
 6. [Resultados del Proyecto](#resultados-del-proyecto)
-7. [Conclusiones y Recomendaciones](#conclusiones-y-recomendaciones)
-8. [Contribuciones](#contribuciones)
-9. [Licencia](#licencia)
+7. [Contribuciones](#contribuciones)
+8. [Licencia](#licencia)
 
 ## 🌍 Introducción
 
@@ -94,11 +93,6 @@ Una vez configurada localmente, la aplicación estará lista para ser utilizada 
 
 5. **Consultar la Base de Datos de Residuos**  
    Aprende más sobre los residuos y cómo clasificarlos correctamente.
-
-## 📜 Conclusiones y Recomendaciones
-
-- **Conclusión**: La aplicación ha demostrado ser efectiva en educar y motivar a los usuarios a reciclar, generando un impacto positivo en la comunidad y el medio ambiente.
-- **Recomendaciones**: Es necesario seguir mejorando la experiencia del usuario y optimizar la retención de usuarios a través de nuevas estrategias de gamificación y campañas educativas.
 
 ## 🤝 Contribuciones
 
